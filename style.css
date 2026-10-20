@@ -1,0 +1,543 @@
+/* ============================================
+   ҚЫЗ ҰЗАТУ — Береке
+   Қазақы стиль: қызыл барқыт, алтын ою-өрнек
+   ============================================ */
+
+:root {
+    --wine: #5e0f16;
+    --wine-deep: #3a070c;
+    --gold: #c9a35c;
+    --gold-light: #e6cf9a;
+    --cream: #f8f1e4;
+    --paper: #fbf6ec;
+    --ink: #3b1a14;
+    --ink-soft: #6b4a3e;
+
+    /* Қошқар мүйіз өрнегі — алтын жолақ */
+    --band: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Cpath d='M24 23V11M24 11C20 3 10 2 8 8C6 13 12 16 15 13C17 11 15 8 13 9M24 11C28 3 38 2 40 8C42 13 36 16 33 13C31 11 33 8 35 9M0 23C4 23 4 18 2 16M48 23C44 23 44 18 46 16' fill='none' stroke='%23c9a35c' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+    /* Фондағы нәзік өрнек */
+    --paper-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a35c' stroke-opacity='.13' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M60 52C55 42 43 40 40 48C38 54 45 58 49 54C51 52 49 48 46 49M60 52C65 42 77 40 80 48C82 54 75 58 71 54C69 52 71 48 74 49M60 52V68M60 68C55 78 43 80 40 72C38 66 45 62 49 66C51 68 49 72 46 71M60 68C65 78 77 80 80 72C82 66 75 62 71 66C69 68 71 72 74 71'/%3E%3Cpath d='M0 0L8 8M120 0L112 8M0 120L8 112M120 120L112 112'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Tenor Sans', sans-serif;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image: var(--paper-pattern);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Үлкен экранда — телефон пішіні ортада */
+@media (min-width: 640px) {
+    body { background-color: var(--wine-deep); }
+    body > section, body > footer {
+        max-width: 520px;
+        margin: 0 auto;
+        background-color: var(--paper);
+        background-image: var(--paper-pattern);
+    }
+    body > .hero-section { background-color: var(--paper); }
+    body > .countdown-section { background: var(--wine); }
+}
+
+.hidden { display: none !important; }
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 24px;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+/* === Ою-өрнек жолағы === */
+.ornament-band {
+    width: 100%;
+    height: 26px;
+    background-color: var(--wine);
+    background-image: var(--band);
+    background-repeat: repeat-x;
+    background-position: center 1px;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.horn-divider {
+    display: block;
+    width: 90px;
+    height: 45px;
+    color: var(--gold);
+    margin-top: 34px;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 20px;
+}
+
+.hero-photo-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: var(--wine-deep);
+}
+
+.hero-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: heroZoom 14s ease-out forwards;
+}
+@keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(58,7,12,0) 45%, rgba(58,7,12,0.55) 75%, rgba(58,7,12,0.92) 100%);
+    pointer-events: none;
+}
+
+.hero-text {
+    position: absolute;
+    left: 0; right: 0; bottom: 34px;
+    text-align: center;
+    color: var(--cream);
+    animation: fadeUp 1.4s 0.3s ease both;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+.hero-kicker {
+    font-size: 13px;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    color: var(--gold-light);
+}
+.hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(64px, 19vw, 104px);
+    line-height: 1;
+    margin: 4px 0 8px;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+}
+.hero-date {
+    font-size: 14px;
+    letter-spacing: 0.35em;
+    padding-left: 0.35em;
+    color: var(--gold-light);
+}
+
+/* Музыка батырмасы */
+.music-play-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--cream);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+}
+.music-play-btn::before {
+    content: '';
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(94, 15, 22, 0.75);
+    border: 1px solid var(--gold);
+    backdrop-filter: blur(4px);
+}
+.play-icon { position: relative; z-index: 1; width: 20px; height: 20px; }
+.circular-text {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: spin 14s linear infinite;
+    fill: var(--cream);
+    font-size: 8.4px;
+    letter-spacing: 1.1px;
+    font-family: 'Tenor Sans', sans-serif;
+    text-shadow: 0 0 4px rgba(0,0,0,0.6);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Күн */
+.date-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    color: var(--wine);
+}
+.date-dayname, .date-monthname {
+    font-size: 15px;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+}
+.date-main {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin: 6px 0;
+}
+.date-divider-v { width: 1px; height: 64px; background: var(--gold); }
+.date-big-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 92px;
+    font-weight: 500;
+    line-height: 1;
+}
+.date-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    letter-spacing: 0.3em;
+    padding-left: 0.3em;
+    color: var(--ink-soft);
+}
+
+/* =========================================
+   ШАҚЫРУ
+   ========================================= */
+.frame {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    padding: 44px 22px;
+    border: 1px solid var(--gold);
+    outline: 1px solid rgba(201,163,92,0.45);
+    outline-offset: -8px;
+    background: rgba(255,255,255,0.45);
+}
+.corner {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: var(--band) center / 48px 24px no-repeat;
+    background-color: var(--paper);
+}
+.corner.tl { top: -17px; left: -17px; transform: rotate(-45deg); }
+.corner.tr { top: -17px; right: -17px; transform: rotate(45deg); }
+.corner.bl { bottom: -17px; left: -17px; transform: rotate(-135deg); }
+.corner.br { bottom: -17px; right: -17px; transform: rotate(135deg); }
+
+.greeting-address {
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    line-height: 1.9;
+    color: var(--wine);
+    margin-bottom: 26px;
+}
+.invite-line-upper {
+    font-size: 13.5px;
+    letter-spacing: 0.1em;
+    line-height: 1.9;
+    color: var(--ink);
+}
+.invite-name-script {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 58px;
+    line-height: 1.15;
+    color: var(--wine);
+    margin: 4px 0 6px;
+}
+.invite-poem {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 24px;
+}
+
+/* =========================================
+   ФОТО
+   ========================================= */
+.gallery-section { gap: 22px; padding-top: 10px; }
+.gallery-photo {
+    width: 100%;
+    max-width: 440px;
+    padding: 8px;
+    border: 1px solid var(--gold);
+    background: var(--cream);
+    box-shadow: 0 10px 30px rgba(58,7,12,0.15);
+}
+.gallery-photo img { width: 100%; display: block; }
+.gallery-photo.tall { border-radius: 220px 220px 0 0; }
+.gallery-photo.tall img { border-radius: 212px 212px 0 0; }
+
+/* =========================================
+   ТАҚЫРЫПТАР
+   ========================================= */
+.script-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.2;
+    color: var(--wine);
+    margin-bottom: 18px;
+}
+.script-title.light { color: var(--gold-light); margin: 34px 0 20px; }
+
+/* Мекен-жай */
+.venue-address {
+    font-size: 17px;
+    letter-spacing: 0.18em;
+    line-height: 1.8;
+    color: var(--ink);
+}
+.gis-btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 13px 40px;
+    background: var(--wine);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    border: 1px solid var(--gold);
+    outline: 1px solid var(--wine);
+    outline-offset: 3px;
+    transition: background 0.3s;
+}
+.gis-btn:active, .gis-btn:hover { background: var(--wine-deep); }
+
+/* Күнтізбе */
+.calendar-date-text { font-size: 15px; letter-spacing: 0.2em; margin-bottom: 22px; }
+.calendar-grid {
+    width: 100%;
+    max-width: 330px;
+    padding: 18px 14px;
+    border: 1px solid var(--gold);
+    background: rgba(255,255,255,0.5);
+}
+.calendar-month {
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--wine);
+    margin-bottom: 10px;
+}
+.calendar-header, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 6px;
+}
+.calendar-header span {
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(201,163,92,0.5);
+    margin-bottom: 6px;
+}
+.calendar-days span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calendar-days .highlight {
+    position: relative;
+    color: var(--cream);
+    font-weight: 600;
+    z-index: 0;
+}
+.calendar-days .highlight::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: var(--wine);
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+    z-index: -1;
+    animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 50% { box-shadow: 0 0 0 6px rgba(201,163,92,0.25); } }
+.start-time { margin-top: 22px; font-size: 15px; letter-spacing: 0.18em; color: var(--wine); }
+
+/* Кері санақ */
+.countdown-section {
+    background: var(--wine);
+    color: var(--cream);
+    padding: 0;
+}
+.countdown-timer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+.countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 58px; }
+.countdown-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--gold-light);
+    transition: transform 0.12s, opacity 0.12s;
+}
+.countdown-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.85; }
+.countdown-sep {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    line-height: 1.15;
+    color: var(--gold);
+}
+
+/* RSVP */
+.rsvp-instruction {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+}
+.rsvp-form { width: 100%; max-width: 380px; text-align: left; }
+.form-group { margin-bottom: 28px; position: relative; }
+.form-group input[type="text"], .form-group textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--ink);
+    padding: 8px 2px;
+    outline: none;
+    resize: none;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: #b39a86; font-style: italic; }
+.input-line { height: 1px; background: var(--gold); }
+.form-question {
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--wine);
+    margin-bottom: 14px;
+    text-align: center;
+}
+.radio-group { display: flex; flex-direction: column; gap: 14px; }
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    -webkit-tap-highlight-color: transparent;
+}
+.radio-label input { position: absolute; opacity: 0; pointer-events: none; }
+.radio-circle {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+    position: relative;
+    transition: background 0.2s;
+}
+.radio-label input:checked + .radio-circle { background: var(--wine); }
+.radio-label input:checked + .radio-circle::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: var(--gold-light);
+}
+.radio-label input:focus-visible + .radio-circle { outline: 2px solid var(--wine); outline-offset: 3px; }
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px auto 0;
+    min-width: 200px;
+    height: 50px;
+    background: var(--wine);
+    color: var(--cream);
+    border: 1px solid var(--gold);
+    outline: 1px solid var(--wine);
+    outline-offset: 3px;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+}
+.submit-btn:disabled { opacity: 0.7; }
+.spinner { animation: spin 0.9s linear infinite; transform-origin: center; }
+
+.rsvp-success {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--wine);
+}
+.success-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 14px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+/* Той иелері */
+.footer-section { padding-bottom: 0; }
+.hosts-names {
+    font-size: 19px;
+    letter-spacing: 0.2em;
+    line-height: 1.8;
+    color: var(--ink);
+}
+.footer-wait {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--wine);
+    margin: 26px 0 44px;
+}
+.footer-section .ornament-band { margin: 0 -24px; width: calc(100% + 48px); }
+
+@media (max-width: 360px) {
+    .countdown-item { min-width: 48px; }
+    .countdown-number { font-size: 38px; }
+    .invite-name-script { font-size: 50px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .animate-on-scroll { opacity: 1; transform: none; }
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#5e0f16">
+    <link rel="icon" href="og.jpg" type="image/jpeg">
+    <title>Береке | Қыз ұзату</title>
+    <meta name="description" content="Берекенің қыз ұзату тойына шақыру. 3 желтоқсан 2026 жыл, сағат 17:00, «Rass-Al» мейрамханасы">
+
+    <!-- Open Graph (сайтты жариялағаннан кейін og:url және og:image сілтемелерін толық мекенжайға ауыстырыңыз) -->
+    <meta property="og:title" content="Береке | Қыз ұзату тойына шақыру" />
+    <meta property="og:description" content="Сіздерді қызымыз Берекенің ұзату тойына шақырамыз! 03.12.2026, 17:00" />
+    <meta property="og:image" content="og.jpg" />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Ою-өрнек үлгісі (қошқар мүйіз) — бүкіл бетте қайта қолданылады -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="horn" viewBox="0 0 120 60">
+                <path d="M60 58 C60 40 60 30 60 22 M60 22 C52 8 30 4 22 16 C15 27 26 38 36 32 C43 28 40 18 33 20
+                         M60 22 C68 8 90 4 98 16 C105 27 94 38 84 32 C77 28 80 18 87 20
+                         M60 40 C48 40 40 48 44 56 M60 40 C72 40 80 48 76 56"
+                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                <circle cx="60" cy="12" r="3.5" fill="currentColor" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Әуен -->
+    <audio id="bg-music" loop preload="auto">
+        <source
+            src="https://dl.dropbox.com/scl/fi/g6l5i8yd8bvcnv4vz8968/Dombyra_-_Saulem_-_saulem._-SkySound.cc.mp3?rlkey=c0wf5fy1hgqgr8r1h8n79zhtw&st=17bjdcvp&dl=0"
+            type="audio/mpeg" />
+    </audio>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero-section">
+        <div class="hero-photo-container">
+            <img src="hero.jpg" alt="Береке" class="hero-photo" fetchpriority="high">
+            <div class="hero-shade"></div>
+            <div class="hero-text">
+                <p class="hero-kicker">ҚЫЗ ҰЗАТУ</p>
+                <h1 class="hero-name">Береке</h1>
+                <p class="hero-date">03 · 12 · 2026</p>
+            </div>
+            <button id="music-toggle" class="music-play-btn" aria-label="Әуенді қосу">
+                <svg class="play-icon" id="music-icon-play" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <polygon points="8,5 20,12 8,19" />
+                </svg>
+                <svg class="play-icon hidden" id="music-icon-pause" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <rect x="6" y="4" width="4" height="16" />
+                    <rect x="14" y="4" width="4" height="16" />
+                </svg>
+                <svg class="circular-text" viewBox="0 0 100 100" aria-hidden="true">
+                    <path id="circle-path" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0" fill="none" />
+                    <text><textPath href="#circle-path">ӘУЕНІН ҚОСУ ҮШІН БАСЫҢЫЗ · ӘУЕНІН ҚОСУ ҮШІН БАСЫҢЫЗ ·</textPath></text>
+                </svg>
+            </button>
+        </div>
+
+        <div class="ornament-band" aria-hidden="true"></div>
+
+        <!-- Күн -->
+        <div class="date-section animate-on-scroll">
+            <span class="date-dayname">БЕЙСЕНБІ</span>
+            <div class="date-main">
+                <span class="date-divider-v"></span>
+                <span class="date-big-number">03</span>
+                <span class="date-divider-v"></span>
+            </div>
+            <span class="date-monthname">ЖЕЛТОҚСАН</span>
+            <span class="date-year">2026</span>
+        </div>
+
+        <svg class="horn-divider animate-on-scroll" aria-hidden="true"><use href="#horn" /></svg>
+    </section>
+
+    <!-- ============ ШАҚЫРУ ============ -->
+    <section id="greeting" class="section greeting-section">
+        <div class="frame animate-on-scroll">
+            <span class="corner tl"></span><span class="corner tr"></span>
+            <span class="corner bl"></span><span class="corner br"></span>
+
+            <p class="greeting-address">
+                ҚҰРМЕТТІ<br>
+                АҒАЙЫН-ТУЫС, БАУЫРЛАР,<br>
+                ҚҰДА-ЖЕКЖАТ ЖӘНЕ<br>
+                ДОС-ЖАРАНДАР!
+            </p>
+
+            <div class="greeting-invite">
+                <p class="invite-line-upper">СІЗДЕРДІ ОТБАСЫМЫЗДЫҢ ҚУАНЫШЫ –<br>АЯУЛЫ ҚЫЗЫМЫЗ</p>
+                <p class="invite-name-script">Берекенің</p>
+                <p class="invite-line-upper">
+                    ҚЫЗ ҰЗАТУ ТОЙЫНА АРНАЛҒАН<br>
+                    САЛТАНАТТЫ АҚ ДАСТАРХАНЫМЫЗДЫҢ<br>
+                    ҚАДІРЛІ ҚОНАҒЫ БОЛУҒА<br>
+                    ШАҚЫРАМЫЗ!
+                </p>
+                <p class="invite-poem">
+                    Қызғалдақтай құлпырған аруымызды<br>
+                    жаңа өмір табалдырығына шығарып салу<br>
+                    сәтін бізбен бірге бөлісіңіздер.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ФОТО ============ -->
+    <section id="gallery" class="section gallery-section">
+        <figure class="gallery-photo tall animate-on-scroll">
+            <img src="bride.jpg" alt="Береке" loading="lazy">
+        </figure>
+        <figure class="gallery-photo wide animate-on-scroll">
+            <img src="yurt.jpg" alt="Береке киіз үйде" loading="lazy">
+        </figure>
+    </section>
+
+    <!-- ============ МЕКЕН-ЖАЙ ============ -->
+    <section id="venue" class="section venue-section">
+        <h2 class="script-title animate-on-scroll">Мекен-жайымыз:</h2>
+        <p class="venue-address animate-on-scroll">
+            «RASS-AL»<br>
+            МЕЙРАМХАНАСЫ
+        </p>
+        <a href="https://go.2gis.com/wL6Fk" target="_blank" rel="noopener" class="gis-btn animate-on-scroll" id="map-link">
+            2GIS КАРТАСЫ
+        </a>
+        <svg class="horn-divider animate-on-scroll" aria-hidden="true"><use href="#horn" /></svg>
+    </section>
+
+    <!-- ============ КҮНТІЗБЕ ============ -->
+    <section id="calendar" class="section calendar-section">
+        <h2 class="script-title animate-on-scroll">Той салтанаты:</h2>
+        <p class="calendar-date-text animate-on-scroll">3 ЖЕЛТОҚСАН 2026 ЖЫЛ</p>
+        <div class="calendar-grid animate-on-scroll">
+            <div class="calendar-month">ЖЕЛТОҚСАН</div>
+            <div class="calendar-header">
+                <span>Дс</span><span>Сс</span><span>Ср</span><span>Бс</span><span>Жм</span><span>Сб</span><span>Жк</span>
+            </div>
+            <div class="calendar-days">
+                <span class="empty"></span>
+                <span>01</span><span>02</span><span class="highlight">03</span><span>04</span><span>05</span><span>06</span>
+                <span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span>
+                <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+                <span>28</span><span>29</span><span>30</span><span>31</span>
+            </div>
+        </div>
+        <p class="start-time animate-on-scroll">БАСТАЛУЫ САҒАТ 17:00-ДЕ</p>
+    </section>
+
+    <!-- ============ КЕРІ САНАҚ ============ -->
+    <section id="countdown" class="section countdown-section">
+        <div class="ornament-band" aria-hidden="true"></div>
+        <h2 class="script-title light animate-on-scroll">Тойға дейін...</h2>
+        <div class="countdown-timer animate-on-scroll" id="countdown-timer">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">0</span>
+                <span class="countdown-label">күн</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">0</span>
+                <span class="countdown-label">сағат</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">0</span>
+                <span class="countdown-label">минут</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">0</span>
+                <span class="countdown-label">секунд</span>
+            </div>
+        </div>
+        <div class="ornament-band" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section id="rsvp" class="section rsvp-section">
+        <h2 class="script-title animate-on-scroll">Тойға келуіңізді<br>растауыңызды сұраймыз:</h2>
+        <p class="rsvp-instruction animate-on-scroll">
+            АТЫ-ЖӨНІҢІЗДІ ЖАЗЫҢЫЗ<br>
+            (ЖҰБЫҢЫЗБЕН КЕЛЕТІН<br>
+            БОЛСАҢЫЗ, ЕСІМДЕРІҢІЗДІ БІРГЕ<br>
+            ЖАЗУДЫ ӨТІНЕМІЗ)
+        </p>
+        <form id="rsvp-form" class="rsvp-form animate-on-scroll">
+            <div class="form-group">
+                <input type="text" id="guest-name" name="name" placeholder="Аты-жөніңіз" required>
+                <div class="input-line"></div>
+            </div>
+            <div class="form-group">
+                <p class="form-question">ТОЙҒА КЕЛЕСІЗ БЕ?</p>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="Иә, әрине" required>
+                        <span class="radio-circle"></span>
+                        <span class="radio-text">ИӘ, ӘРИНЕ</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="Жұбыммен келемін">
+                        <span class="radio-circle"></span>
+                        <span class="radio-text">ЖҰБЫММЕН КЕЛЕМІН</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="Өкінішке орай, келе алмаймын">
+                        <span class="radio-circle"></span>
+                        <span class="radio-text">ӨКІНІШКЕ ОРАЙ, КЕЛЕ АЛМАЙМЫН</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea id="guest-wishes" name="wishes" rows="3" placeholder="Тілегіңіз (міндетті емес)"></textarea>
+                <div class="input-line"></div>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span class="btn-text">ЖІБЕРУ</span>
+                <span class="btn-loader hidden">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-dasharray="30 50" class="spinner" />
+                    </svg>
+                </span>
+            </button>
+        </form>
+        <div id="rsvp-success" class="rsvp-success hidden">
+            <div class="success-icon">✓</div>
+            <p>Рахмет! Жауабыңыз қабылданды.</p>
+        </div>
+
+        <svg class="horn-divider animate-on-scroll" aria-hidden="true"><use href="#horn" /></svg>
+    </section>
+
+    <!-- ============ ТОЙ ИЕЛЕРІ ============ -->
+    <footer class="section footer-section">
+        <h2 class="script-title animate-on-scroll">Той иелері:</h2>
+        <p class="hosts-names animate-on-scroll">МҰХАН – ЖАННА<br>ОМАРОВТАР</p>
+        <p class="footer-wait animate-on-scroll">Сіздерді асыға күтеміз!</p>
+        <div class="ornament-band" aria-hidden="true"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
